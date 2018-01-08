@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 100%;
+}
+.App
+{
+	background-color: rgba(0,0,0,.9);
+	color: #fff;
+}
+/************** Header ******************/
+.header
+{
+	width: 100%;
+	text-align: left;
+}
+.header span
+{
+	color: #fff;
+	font-size: 1.2em;
+}
+.stopwatch,
+.totalpoint
+{
+	font-size: .67em;
+	font-weight: bold;
+	color: #4a4b4b;
+	letter-spacing: 1.2px;
+	/*text-shadow: 0px 1px #fff;*/
+}
+.stopwatch
+{
+	background-color: #252626;
+	padding-bottom: 10px;
+}
+.totalpoint
+{
+	padding-top: 15px;
+}
+.stop-btn,
+.reset-btn
+{
+	font-weight: bold;
+	letter-spacing: 1.2px;
+	padding: 5px;
+	border-radius: 6px;
+	margin: 0 .5%;
+	color: #4a4b4b;
+}
+.stop-btn:hover,
+.reset-btn:hover
+{
+	background-color: #124567;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+@media all and (min-width: 769px)
+{
+	.App
+	{
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 5px;
+	}
+	.header
+	{
+		margin: 0px 2%;
+	}
+	.totalpoint,
+	.header h1,
+	.stopwatch
+	{
+		display: inline-block;
+		vertical-align: top;
+		/*outline: 1px solid red;*/
+		text-align: center;
+	}
+	.totalpoint,
+	.stopwatch
+	{
+		width: 25%;
+	}
+	.header h1
+	{
+		width: 48%;
+		margin-top: 40px;
+		font-size: 1.6em;
+		letter-spacing: 1.2px;
+	}
+
+}
+@media all and (max-width: 768px)
+{
+	.header
+	{
+		/*padding-left: 1%;*/
+	}
+}
