@@ -5,7 +5,6 @@ import './App.css';
 class App extends Component {
   render() {
 
-
     return (
        <div className="App">
         <div className="header">
@@ -21,7 +20,7 @@ class App extends Component {
         		<button className="reset-btn">RESET</button>
         	</div>
         </div>
-        <div className="players">
+        <div className="player-container">
         	<div className="player">
         		<div className="player_name">Adebola</div>
         		<div className="player_score">
@@ -30,7 +29,7 @@ class App extends Component {
         	</div>
         </div>
 
-        <div className="players">
+        <div className="player-container">
         	<div className="player">
         		<div className="player_name">Kwame</div>
         		<div className="player_score">
