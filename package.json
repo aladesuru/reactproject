@@ -1,10 +1,10 @@
 {
-  "name": "learning_react",
-  "version": "0.1.0",
+  "name": "y",
+  "version": "y",
   "private": true,
   "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/aladesuru/scoreboard_app_on_react.git",
+  "author": "adebola <bola@ringley.co.uk>",
+  "license": "MIT"
 }

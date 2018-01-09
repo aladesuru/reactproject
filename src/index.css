@@ -32,7 +32,7 @@ body {
 .stopwatch
 {
 	background-color: #252626;
-	padding-bottom: 10px;
+	padding: 5px  0;
 }
 .totalpoint
 {
@@ -94,8 +94,14 @@ body {
 }
 @media all and (max-width: 768px)
 {
-	.header
+	.App
 	{
-		/*padding-left: 1%;*/
+		padding: 10px 1%;
 	}
+}
+
+/************** players******************/
+.player-container
+{
+	background-color:  #252626;
 }
