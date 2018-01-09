@@ -95,12 +95,12 @@ body {
 {
 	.App
 	{
-		padding: 5px 2%;
+		padding: 5px 0;
 
 	}
 	.stopwatch
 	{
-		padding-top: 5px;
+		padding: 5px;
 	}
 }
 
@@ -110,7 +110,10 @@ body {
 {
 	background-color: #252626;
 	clear: both;
+	display: block;
 }
+
+
 .player_score button
 {
 	color: #fff;
@@ -138,20 +141,21 @@ body {
 {
 	.player-container
 	{
-		padding: 0px 20px 2%;
+		padding: 10px 5px 2%;
 		border: 1px solid #252626;
+		margin: 5px 0;
 	}
 
 	.player
 	{
-		padding: 10px;
+		/*padding-top: 5px;*/
+
 	}
 	.player > div
 	{
 		/*outline: 1px solid red;*/
 		padding: 0 1%;
 		width: 20%;
-		display: inline-block;
 	}
 	.player > div:first-child
 	{
@@ -161,10 +165,17 @@ body {
 	.player > div:last-child
 	{
 		float: right;
+
 	}
 	.player_score span
 	{
 		margin: 0 3%;
+	}
+	.player-container::after
+	{
+		content: " ";
+		display: inline-block;
+		clear: both;
 	}
 
 }
