@@ -96,11 +96,14 @@ body {
 	.App
 	{
 		padding: 5px 0;
-
 	}
 	.stopwatch
 	{
 		padding: 5px;
+	}
+	.header
+	{
+		text-align: center;
 	}
 }
 
@@ -112,7 +115,6 @@ body {
 	clear: both;
 	display: block;
 }
-
 
 .player_score button
 {
@@ -146,30 +148,26 @@ body {
 		margin: 5px 0;
 	}
 
-	.player
-	{
-		/*padding-top: 5px;*/
-
-	}
 	.player > div
 	{
-		/*outline: 1px solid red;*/
 		padding: 0 1%;
-		width: 20%;
 	}
 	.player > div:first-child
 	{
 		float: left;
+		width: 60%;
 	}
 
 	.player > div:last-child
 	{
 		float: right;
+		width: 30%;
+		text-align: right;
 
 	}
 	.player_score span
 	{
-		margin: 0 3%;
+		margin: 0 4%;
 	}
 	.player-container::after
 	{
@@ -182,5 +180,27 @@ body {
 
 @media all and (max-width: 768px)
 {
+	.player-container
+	{
+		padding: 10px 0 0px 2%;
+		margin-bottom: 5px;
 
+	}
+	.player > div
+	{
+		display: inline-block;
+	}
+	.player > div:first-child
+	{
+		width: 60%;
+	}
+	.player > div:last-child
+	{
+		width: 30%;
+		text-align: right;
+	}
+	.player_score span
+	{
+		margin: 0 4%;
+	}
 }

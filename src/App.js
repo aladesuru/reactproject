@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropsTypes from 'prop-types';
+
+var Stat = (props) => {
+  var totalPlayer = props.totalplayer.length ;
+  var totalPoint = props.totalplayer.reduce((total , player) => {
+
+         return total + player.score;
+  } , 0);
 
 
+  return(
+        <div className="totalpoint">
+          <div>
+              <p>PLAYER: <span> { totalPlayer }</span></p>
+              <p> TOTAL POINT:<span> {totalPoint} </span></p>
+          </div>
+        </div>
+    );
+}
+Stat.propsTypes = {
+  totalplayer: PropsTypes.array.isRequired,
+}
 
 var Header = (props) => {
     return(
     <div className="header">
-        <div className="totalpoint">
-            <p>PLAYER: <span> 2</span></p>
-            <p> TOTAL POINT:<span> 108 </span></p>
-        </div>
+     <Stat totalplayer = { props.initialplayers } />
         <h1>{props.title}</h1>
         <div className="stopwatch">
             <p>STOPWATCH</p>
@@ -21,6 +36,10 @@ var Header = (props) => {
     </div>
     );
 };
+Header.propsTypes = {
+  title: PropsTypes.string.isRequired,
+  initialplayers: PropsTypes.array.isRequired,
+}
 
 var Counter = (props) => {
     return(
@@ -29,50 +48,79 @@ var Counter = (props) => {
         </div>
     );
 };
+Counter.propsTypes = {
+  score: PropsTypes.number.isRequired,
+}
 
 var Player = (props) => {
     return(
-         <div className="player">
-                <div className="player_name">{props.name}</div>
-                <div className="player_score">
-                     <Counter score = {props.score} />
-                </div>
-               
+         <div className="player-container">
+           <div className="player">
+                  <div className="player_name">{props.name}</div>
+                  <div className="player_score">
+                       <Counter score = {props.score} />
+                  </div>
+          </div>
         </div>
     );
 };
 
-var Application = (props) => {
-    return (
-       <div className="App">
-       <Header  title = {props.title} />
+Player.propsTypes = {
+  name: PropsTypes.string.isRequired,
+  score: PropsTypes.number.isRequired,
+  key: PropsTypes.number.isRequired,
+}
+
+ class App extends Component {
+  state = {
+      players: [
         {
-            props.players.map((player) => {
-           return(
-                    <div className="player-container">
-                        <Player name = {player.name} score = {player.score} />
-                    </div>
-                );
-            })
+            name: "Adebola Aladesuru" ,
+            score: 50,
+        },
+        {
+            name: "Samuel Olugbemi" ,
+            score: 60,
+        },
+        {
+            name: "Kwame Mintah" ,
+            score: 70,
+        },
+        {
+            name: "Jordan Rails" ,
+            score: 90,
+        },
+        {
+            name: "Anthony wrigth" ,
+            score: 40
         }
+    ]
+  }
 
-      </div>
+  propsTypes = {
+    title: PropsTypes.string.isRequired,
+    players: PropsTypes.array.isRequired,
+  }
+
+  getTotalPlayer = () => this.state.players.length;
+
+  render() {
+    return (
+    <div className="App">
+     <Header  title = {this.props.title} initialplayers = { this.state.players } />
+      {
+          this.state.players.map((player , index) => 
+          <Player name = {player.name} score = {player.score} key = { index } /> 
+          )
+      }
+    </div>
     );
-};
 
+  }
+}
 
-Application.defaultProps = {
+App.defaultProps = {
     title: "SCOREBOARD",
-};
+  }
 
-
-
-
-
-// class App extends Component {
-//   render() {
-    
-//   }
-// }
-
-export default Application;
+export default App;
