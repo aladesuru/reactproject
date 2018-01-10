@@ -1,6 +1,6 @@
 {
-  "name": "learning_react",
-  "version": "0.1.0",
+  "name": "scoreboardapp",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.0",
@@ -14,4 +14,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
+
 }

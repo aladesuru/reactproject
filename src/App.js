@@ -8,7 +8,6 @@ var Stat = (props) => {
          return total + player.score;
   } , 0);
 
-
   return(
         <div className="totalpoint">
           <div>
@@ -18,6 +17,7 @@ var Stat = (props) => {
         </div>
     );
 }
+
 Stat.propsTypes = {
   totalplayer: PropsTypes.array.isRequired,
 }
@@ -26,6 +26,7 @@ var Header = (props) => {
     return(
     <div className="header">
      <Stat totalplayer = { props.initialplayers } />
+
         <h1>{props.title}</h1>
         <div className="stopwatch">
             <p>STOPWATCH</p>
@@ -36,6 +37,7 @@ var Header = (props) => {
     </div>
     );
 };
+
 Header.propsTypes = {
   title: PropsTypes.string.isRequired,
   initialplayers: PropsTypes.array.isRequired,
@@ -48,6 +50,7 @@ var Counter = (props) => {
         </div>
     );
 };
+
 Counter.propsTypes = {
   score: PropsTypes.number.isRequired,
 }
@@ -101,9 +104,7 @@ Player.propsTypes = {
     title: PropsTypes.string.isRequired,
     players: PropsTypes.array.isRequired,
   }
-
-  getTotalPlayer = () => this.state.players.length;
-
+  
   render() {
     return (
     <div className="App">
