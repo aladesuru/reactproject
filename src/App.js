@@ -27,7 +27,7 @@ var Header = (props) => {
     <div className="header">
      <Stat totalplayer = { props.initialplayers } />
 
-        <h1>{props.title}</h1>
+        <h1> { props.title } </h1>
         <div className="stopwatch">
             <p>STOPWATCH</p>
             <p><span>1</span></p>
@@ -41,19 +41,22 @@ var Header = (props) => {
 Header.propsTypes = {
   title: PropsTypes.string.isRequired,
   initialplayers: PropsTypes.array.isRequired,
-}
+};
 
 var Counter = (props) => {
     return(
         <div className="player_score">
-            <button>-</button><span>{props.score}</span><button>+</button>
+            <button onClick = {() => props.onChange(-1)}>-</button>
+            <span>{props.score}</span>
+            <button onClick = {() => props.onChange(1)}>+</button>
         </div>
     );
 };
 
 Counter.propsTypes = {
   score: PropsTypes.number.isRequired,
-}
+  onChange:PropsTypes.func.isRequired,
+};
 
 var Player = (props) => {
     return(
@@ -61,7 +64,7 @@ var Player = (props) => {
            <div className="player">
                   <div className="player_name">{props.name}</div>
                   <div className="player_score">
-                       <Counter score = {props.score} />
+                      <Counter score = {props.score} onChange = { props.onScorechange }/>
                   </div>
           </div>
         </div>
@@ -72,7 +75,8 @@ Player.propsTypes = {
   name: PropsTypes.string.isRequired,
   score: PropsTypes.number.isRequired,
   key: PropsTypes.number.isRequired,
-}
+  onScorechange : PropsTypes.func.isRequired
+};
 
  class App extends Component {
   state = {
@@ -98,30 +102,38 @@ Player.propsTypes = {
             score: 40
         }
     ]
-  }
+  };
 
   propsTypes = {
     title: PropsTypes.string.isRequired,
     players: PropsTypes.array.isRequired,
-  }
-  
+  };
+
+  onScorechange = (delta) => {
+    console.log('onScorechange' , delta);
+  };
+
   render() {
     return (
     <div className="App">
      <Header  title = {this.props.title} initialplayers = { this.state.players } />
       {
           this.state.players.map((player , index) => 
-          <Player name = {player.name} score = {player.score} key = { index } /> 
+          <Player 
+            name = {player.name} 
+            score = {player.score} 
+            key = { index } 
+            onScorechange = {(delta) => this.onScorechange(delta , index)}/> 
           )
       }
     </div>
     );
 
-  }
-}
+  };
+};
 
 App.defaultProps = {
     title: "SCOREBOARD",
-  }
+  };
 
 export default App;
