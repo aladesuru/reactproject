@@ -78,6 +78,42 @@ Player.propsTypes = {
   onScorechange : PropsTypes.func.isRequired
 };
 
+
+class AddPlayer extends Component{
+  state = {
+    name: " ",
+  }
+
+  nameChange = (e) => {
+    this.setState ({
+      name: e.target.value ,
+    })
+  }
+
+  
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.add(this.state.name);
+  }
+
+  render(){
+    return (
+      <div className="AddPlayerForm">
+        <form>
+          <input type="text" name="" placeholder="Add new player" value={ this.state.name } onChange = { this.nameChange }/>
+          <input type="submit" name="" value ="Add Player" onClick = { this.onSubmit } />
+        </form>
+    </div>
+    );
+  }
+}
+
+AddPlayer.propsTypes = {
+  add: PropsTypes.func.isRequired,
+}
+
+
  class App extends Component {
   state = {
       players: [
@@ -109,9 +145,27 @@ Player.propsTypes = {
     players: PropsTypes.array.isRequired,
   };
 
-  onScorechange = (delta) => {
-    console.log('onScorechange' , delta);
+  onScorechange = (indexTochange , delta) => {
+    this.setState({
+      players: this.state.players.map((player , index) => {
+        if (index === indexTochange) {
+          return {
+            ...player,
+            score : player.score + delta
+          }
+        }
+        return player ;
+      })
+    })
   };
+
+ AddPlayer = (newplayer) => {
+  this.state.players.pop({name: newplayer ,score: 0 });
+  // this.setState({
+  //    this.state.players
+  // })
+
+ }
 
   render() {
     return (
@@ -123,9 +177,10 @@ Player.propsTypes = {
             name = {player.name} 
             score = {player.score} 
             key = { index } 
-            onScorechange = {(delta) => this.onScorechange(delta , index)}/> 
+            onScorechange = {(delta) => this.onScorechange(index , delta)}/> 
           )
       }
+      <AddPlayer  add = { this.AddPlayer } />
     </div>
     );
 
