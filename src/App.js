@@ -160,10 +160,10 @@ AddPlayer.propsTypes = {
   };
 
  AddPlayer = (newplayer) => {
-  this.state.players.pop({name: newplayer ,score: 0 });
-  // this.setState({
-  //    this.state.players
-  // })
+  this.state.players.push({name: newplayer ,score: 0 });
+  this.setState({
+     players : this.state.players ,
+  })
 
  }
 
