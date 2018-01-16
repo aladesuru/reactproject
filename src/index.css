@@ -115,6 +115,10 @@ body {
 	clear: both;
 	display: block;
 }
+.player:hover
+{
+	cursor: pointer;
+}
 
 .player_score button
 {
@@ -128,6 +132,19 @@ body {
 .player_score button:hover
 {
 	cursor: pointer;
+}
+
+.player_name span
+{
+	padding: 3px;
+	margin-right: 2%;
+	color: #ee1818;
+	background-color: #fff;
+	text-align: center;
+	opacity: 0;
+	cursor: pointer;
+	font-weight: bolder;
+	transition: opacity .55s ease-out;
 }
 
 .player_score button:first-child
@@ -175,6 +192,11 @@ body {
 		display: inline-block;
 		clear: both;
 	}
+	
+	.player:hover .player_name span
+	{
+		opacity: 1;
+	}
 
 }
 
@@ -203,6 +225,10 @@ body {
 	{
 		margin: 0 4%;
 	}
+	.player_name span
+	{
+		opacity: 1;
+	}
 }
 
 /************** Add Player Form ******************/
@@ -223,6 +249,9 @@ body {
 	font-weight: bolder;
 	border: none;
 	outline: none;
+	color: #333;
+	padding-left: 1%;
+
 }
 .AddPlayerForm input[type="submit"]
 {
@@ -240,6 +269,7 @@ body {
 .AddPlayerForm input[type="text"]
 {
 	border-radius: 5px;
+	text-transform: capitalize;
 }
 
 @media all and (min-width: 769px)
