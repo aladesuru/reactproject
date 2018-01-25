@@ -1,88 +1,19 @@
-import React, { Component } from 'react';
-import Header from './components/Header' ;
-import Player from './components/Player' ;
-import AddPlayer from './components/Addplayer';
+import React from 'react';
+import { BrowserRouter , Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import About from './components/About';
+import Content from './components/Content';
 
-class App extends Component {
-  state = {
-      players: [
-        {
-            name: "Adebola Aladesuru" ,
-            score: 50,
-        },
-        {
-            name: "Samuel Olugbemi" ,
-            score: 60,
-        },
-        {
-            name: "Kwame Mintah" ,
-            score: 70,
-        },
-        {
-            name: "Jordan Rails" ,
-            score: 90,
-        },
-        {
-            name: "Anthony wrigth" ,
-            score: 40
-        }
-    ]
-  };
-
-
-  onScorechange = (indexTochange , delta) => {
-    this.setState({
-      players: this.state.players.map((player , index) => {
-        if (index === indexTochange) {
-          return {
-            ...player,
-            score : player.score + delta
-          }
-        }
-        return player ;
-      })
-    })
-  };
-
- AddNewPlayer = (newplayer) => {
-  if (newplayer.trim() !== "") {
-    const newPlayers = [{name: newplayer, score: 0 }, ...this.state.players];
-    this.setState({
-      players : newPlayers
-    });
-  }
- };
-
- RemovePlayer = (index) => {
-  this.state.players.splice(index , 1)
-  this.setState({
-    players: this.state.players ,
-  })
- };
-
-  render() {
-    return (
-    <div className="App">
-     <Header  title = {this.props.title} initialplayers = { this.state.players } />
-      {
-          this.state.players.map((player , index) => 
-          <Player 
-            name = {player.name} 
-            score = {player.score} 
-            key = { index } 
-            RemovePlayer = {() => this.RemovePlayer(index)}
-            onScorechange = {(delta) => this.onScorechange(index , delta)}/> 
-          )
-      }
-      <AddPlayer  add = { this.AddNewPlayer } />
-    </div>
+const App = () => {
+  return(
+    <BrowserRouter>
+      <div className="App">
+        <Navigation />
+        <Route exact path="/" component={ Content } />
+        <Route path="/components/About" component={ About } />
+      </div>
+    </BrowserRouter>
     );
-
-  };
-};
-
-App.defaultProps = {
-    title: "SCOREBOARD",
-  };
+}
 
 export default App;
