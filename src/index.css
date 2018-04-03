@@ -36,6 +36,12 @@ body {
 	text-align: center;
 	width: 30%;
 }
+
+.nav li:last-child
+{
+	border-right: none;
+}
+
 .nav a,
 .nav a:active,
 .nav a:visited
