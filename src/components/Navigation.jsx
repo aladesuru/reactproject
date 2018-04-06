@@ -6,7 +6,7 @@ const Navigation = () => {
 			<div className="nav">
 				<nav>
 					<ul>
-						<li><NavLink exact to="/">My App</NavLink></li>
+						<li><NavLink exact to="/">Home</NavLink></li>
 						<li><NavLink to="/components/About">About App</NavLink></li>
 						<li><NavLink to="#">Contact Us</NavLink></li>
 					</ul>
