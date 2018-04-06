@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
 	return(
 		<div className="about">
-			<h1> About Application</h1>
+			<h2> About Application</h2>
 			<p>
 				Score Application is use to track total number of player, total number of point , able to add new player.<br />
 				Also has a stopwatch to take turns. Player can be deleted by clicking cross button before the individual player.<br />

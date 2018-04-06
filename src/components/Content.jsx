@@ -46,7 +46,7 @@ class Content extends Component {
 
  AddNewPlayer = (newplayer) => {
   if (newplayer.trim() !== "") {
-    const newPlayers = [{name: newplayer, score: 0 }, ...this.state.players];
+    const newPlayers = [...this.state.players , {name: newplayer, score: 0 }];
     this.setState({
       players : newPlayers
     });

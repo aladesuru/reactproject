@@ -71,7 +71,7 @@ class Stopwatch extends Component
 	}
 }
 
-Stopwatch.PropTypes = {
+Stopwatch.propTypes = {
 	running : PropTypes.string,
 	elapseTime : PropTypes.number,
 	previousTime : PropTypes.number

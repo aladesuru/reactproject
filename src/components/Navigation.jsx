@@ -9,7 +9,7 @@ const Navigation = () => {
 					<ul>
 						<li><NavLink exact to="/">Home</NavLink></li>
 						<li><NavLink to="/components/About">About App</NavLink></li>
-						<li><NavLink to="#">Source code</NavLink></li>
+						<li><NavLink to="/components/SourceCode">Source code</NavLink></li>
 					</ul>
 				</nav>
 			</div>

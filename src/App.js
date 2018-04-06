@@ -1,18 +1,20 @@
 import React from 'react';
-import { BrowserRouter , Route } from 'react-router-dom';
+import { HashRouter , Route  } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import About from './components/About';
 import Content from './components/Content';
+import Sourcecode from './components/SourceCode';
 
 const App = () => {
   return(
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Navigation />
         <Route exact path="/" component={ Content }/>
-        <Route path="/components/About" component={ About } />
+        <Route  path="/components/About" component={ About } />
+        <Route path="/components/SourceCode" component={ Sourcecode } />
       </div>
-    </BrowserRouter>
+    </HashRouter>
     );
 }
 

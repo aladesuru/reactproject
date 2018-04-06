@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-size: 100%;
+  background-color: rgba(0,0,0,.9);
 }
 .App
 {
@@ -371,19 +372,22 @@ body {
 
 /************** About page ******************/
 
-.about
+.about,
+.sourcecode
 {
 	background-color: #252626;	
 	/*height: 300px;*/
 	padding: 10px;
 }
-.about h1
+.about h2,
+.sourcecode h2
 {
-	border-bottom: 2px solid #f5f5f5
+	border-bottom: 2px solid #f5f5f5;
+	padding-bottom: 5px;
 }
 @media all and (max-width: 768px)
 {
-	.about h1
+	.about h2
 	{
 		font-size: 1em;
 	}
