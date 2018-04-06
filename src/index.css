@@ -253,6 +253,7 @@ body {
 {
 	cursor: pointer;
 }
+
 .player
 {
 	margin:5px 0;
@@ -264,11 +265,12 @@ body {
 {
 	display: inline-block;
 	vertical-align: middle;
-	/*border: 1px solid red;*/
 }
 .player_name
 {
 	width: 70%;
+	word-break: keep-all;
+	word-wrap: break-word;
 }
 .player_score
 {
@@ -283,6 +285,25 @@ body {
 {
 	color: #000;
 	padding: 5px;
+	border: none;
+	box-shadow: 1px 1px 10px rgba(0,0,0, .7);
+	font-weight: bolder;
+
+
+}
+.counter-container button:first-child
+{
+	background-color: #f1c16a;
+}
+
+.counter-container button:last-child
+{
+	background-color: #5ea5d4;
+}
+
+.counter-container span
+{
+	margin: 0 3%;
 }
 
 .player_score button:hover
@@ -290,12 +311,10 @@ body {
 	cursor: pointer;
 }
 
-
-
 .player_name span
 {
 	padding: 3px;
-	margin-right: 2%;
+	margin: 0 1%;
 	color: #ee1818;
 	background-color: #fff;
 	text-align: center;
@@ -305,13 +324,21 @@ body {
 	transition: opacity .55s ease-out;
 }
 
+
+
 @media all and (max-width: 768px)
 {
-		.player
-		{
-			font-size: .78em;
-		}
+	.player
+	{
+		font-size: .68em;
+	}
+
+	.player_name span
+	{
+		opacity: 1;
+	}
 }
+
 @media all and (min-width: 769px)
 {
 	.player
@@ -319,8 +346,18 @@ body {
 		font-size: .89em;
 	}
 
-	
+	.player_name span
+	{
+		opacity: 0;
+	}
+
+	.player_name:hover span
+	{
+		opacity: 1;
+	}
+
 }
+
 @media all and (min-width: 900px)
 {
 	.player
@@ -328,6 +365,7 @@ body {
 		font-size: .89em;
 	}
 }
+
 @media all and (min-width: 1200px)
 {
 	.player
@@ -335,6 +373,8 @@ body {
 		font-size: 1.1em;
 	}
 }
+
+
 /************** Add Player Form ******************/
 .AddPlayerForm
 {
@@ -392,22 +432,22 @@ body {
 {
 	.AddPlayerForm input[type="text"]
 	{
-		width: 40%;	
+		width: 60%;	
 	}
 	.AddPlayerForm input[type="submit"]
 	{
-		width: 40%; 	
+		width: 30%; 	
 	}
 }
 
-/************** About page ******************/
+/************** About  and source code page ******************/
 
 .about,
 .sourcecode
 {
 	background-color: #252626;	
-	/*height: 300px;*/
 	padding: 10px;
+	line-height: 1.5em;
 }
 .about h2,
 .sourcecode h2
