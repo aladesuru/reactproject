@@ -62,10 +62,10 @@ class Stopwatch extends Component
 
 		return(
 			<div className="stopwatch">
-          <p>STOPWATCH</p>
-          <p><span>{second}</span></p>
-           {this.stopWatchBtn}
-          <button className="reset-btn" onClick={this.onReset}>RESET</button>
+        <p>STOPWATCH</p>
+        <p><span>{second}</span></p>
+         {this.stopWatchBtn}
+        <button className="reset-btn" onClick={this.onReset}>RESET</button>
       </div>
 			);
 	}

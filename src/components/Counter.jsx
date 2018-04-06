@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Counter = props => (
-  <div className="player_score">
+  <div className="counter-container">
     <button onClick = {() => props.onChange(-1)}>-</button>
     <span>{props.score}</span>
     <button onClick = {() => props.onChange(1)}>+</button>

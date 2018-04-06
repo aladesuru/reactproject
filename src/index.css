@@ -1,3 +1,10 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +17,31 @@ body {
 	background-color: rgba(0,0,0,.9);
 	color: #fff;
 
+}
+@media all and (min-width: 769px)
+{
+	.App
+	{
+		width: 70%;
+		margin: 0 auto;
+		border-radius: 5px;
+	}
+}
+
+@media all and (min-width: 900px)
+{
+	.App
+	{
+		width: 80%;
+	}
+}
+
+@media all and (min-width: 1200px)
+{
+	.App
+	{
+		width: 60%;
+	}
 }
 /************** Navigation ******************/
 .nav
@@ -87,25 +119,27 @@ body {
 .header span
 {
 	color: #fff;
-	font-size: 1.2em;
 }
+
+.header h1
+{
+	font-size: 1.2em;
+	letter-spacing: 1.2px;
+}
+
 .stopwatch,
 .totalpoint
 {
-	font-size: .67em;
 	font-weight: bold;
 	color: #4a4b4b;
 	letter-spacing: 1.2px;
 }
+
 .stopwatch
 {
 	background-color: #252626;
-	padding-bottom: 10px;
 }
-.totalpoint
-{
-	padding-top: 15px;
-}
+
 .stop-btn,
 .reset-btn
 {
@@ -113,7 +147,7 @@ body {
 	letter-spacing: 1.2px;
 	padding: 5px;
 	border-radius: 6px;
-	margin: 0 .5%;
+	margin: 0 1%;
 	color: #4a4b4b;
 }
 .stop-btn:hover,
@@ -130,54 +164,80 @@ body {
 }
 
 
-@media all and (min-width: 769px)
+@media all and (max-width: 768px)
 {
-	.App
-	{
-		width: 50%;
-		margin: 0 auto;
-		border-radius: 5px;
-		/*margin-top: 20px;*/
-	}
 	.header
 	{
-		margin: 0px 2%;
-	}
-	.totalpoint,
-	.header h1,
-	.stopwatch
-	{
-		display: inline-block;
-		vertical-align: top;
 		text-align: center;
 	}
-	.totalpoint,
+	.stopwatch,
+	.totalpoint
+	{
+		font-size: .67em;
+		margin: 10px 0;
+	}
+
+	.stopwatch p,
+	.totalpoint p
+	{
+		margin: 2%;
+	}
+
 	.stopwatch
 	{
-		width: 25%;
+		padding: 10px 0;
+		font-weight: bolder;
+		margin-bottom: 20px;
 	}
-	.header h1
+	.totalpoint
 	{
-		width: 48%;
 		margin-top: 40px;
-		font-size: 1.6em;
-		letter-spacing: 1.2px;
 	}
 
 }
-@media all and (max-width: 768px)
+@media all and (min-width: 769px)
 {
-	.App
+	.stopwatch,
+	.totalpoint,
+	.header h1
 	{
-		/*padding: 5px 0;*/
+		display: inline-block;
+		vertical-align: top;
+		width: 33%;
+		padding: 20px 0;
+		text-align: center;
 	}
 	.stopwatch
 	{
-		padding: 5px;
+		width: 34%;
 	}
-	.header
+	.stopwatch p,
+	.totalpoint p
 	{
-		text-align: center;
+		margin-bottom: 15px;
+	}
+	.stopwatch,
+	.totalpoint
+	{
+		font-size: .76em;
+	}
+
+}
+
+@media all and (min-width: 900px)
+{
+	.stopwatch,
+	.totalpoint
+	{
+		font-size: .89em;
+	}
+}
+@media all and (min-width: 1200px)
+{
+	.stopwatch,
+	.totalpoint
+	{
+		font-size: 1.2em;
 	}
 }
 
@@ -193,20 +253,44 @@ body {
 {
 	cursor: pointer;
 }
-
-.player_score button
+.player
 {
-	color: #fff;
-	border: none;
-	display: inline-block;
-	font-weight: bolder;
-	font-size: 1.2em;
-	margin-bottom: 5px;
+	margin:5px 0;
+	padding: 5px 0;
 }
+
+.player_name,
+.player_score
+{
+	display: inline-block;
+	vertical-align: middle;
+	/*border: 1px solid red;*/
+}
+.player_name
+{
+	width: 70%;
+}
+.player_score
+{
+	width: 30%;
+}
+.counter-container
+{
+	text-align: center;
+}
+
+.counter-container button
+{
+	color: #000;
+	padding: 5px;
+}
+
 .player_score button:hover
 {
 	cursor: pointer;
 }
+
+
 
 .player_name span
 {
@@ -221,90 +305,36 @@ body {
 	transition: opacity .55s ease-out;
 }
 
-.player_score button:first-child
-{
-	background-color: #e8ae52;
-}
-.player_score button:last-child
-{
-	background-color: #124567;
-}
-
-@media all and (min-width: 769px)
-{
-	.player-container
-	{
-		padding: 10px 5px 2%;
-		border: 1px solid #252626;
-		margin: 5px 0;
-	}
-
-	.player > div
-	{
-		padding: 0 1%;
-	}
-	.player > div:first-child
-	{
-		float: left;
-		width: 60%;
-	}
-
-	.player > div:last-child
-	{
-		float: right;
-		width: 30%;
-		text-align: right;
-
-	}
-	.player_score span
-	{
-		margin: 0 4%;
-	}
-	.player-container::after
-	{
-		content: " ";
-		display: inline-block;
-		clear: both;
-	}
-	
-	.player:hover .player_name span
-	{
-		opacity: 1;
-	}
-
-}
-
 @media all and (max-width: 768px)
 {
-	.player-container
+		.player
+		{
+			font-size: .78em;
+		}
+}
+@media all and (min-width: 769px)
+{
+	.player
 	{
-		padding: 10px 0 0px 2%;
-		margin-bottom: 5px;
+		font-size: .89em;
+	}
 
-	}
-	.player > div
+	
+}
+@media all and (min-width: 900px)
+{
+	.player
 	{
-		display: inline-block;
-	}
-	.player > div:first-child
-	{
-		width: 60%;
-	}
-	.player > div:last-child
-	{
-		width: 30%;
-		text-align: right;
-	}
-	.player_score span
-	{
-		margin: 0 4%;
-	}
-	.player_name span
-	{
-		opacity: 1;
+		font-size: .89em;
 	}
 }
-
+@media all and (min-width: 1200px)
+{
+	.player
+	{
+		font-size: 1.1em;
+	}
+}
 /************** Add Player Form ******************/
 .AddPlayerForm
 {
@@ -362,7 +392,7 @@ body {
 {
 	.AddPlayerForm input[type="text"]
 	{
-		width: 50%;	
+		width: 40%;	
 	}
 	.AddPlayerForm input[type="submit"]
 	{
