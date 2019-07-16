@@ -6,7 +6,7 @@ import Stopwatch from './Stopwatch';
 const Header = (props) => {
   return(
     <div className="header">
-     <Stat totalplayer = { props.initialplayers } />
+     <Stat totalplayer = { props.players } />
       <h1> { props.title } </h1>
         <Stopwatch />
     </div>
@@ -15,7 +15,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  initialplayers: PropTypes.array.isRequired,
+  players: PropTypes.array.isRequired,
 };
 
 

@@ -14,7 +14,7 @@ class AddPlayer extends Component{
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.add(this.state.name);
+    this.props.addplayers(this.state.name);
     this.setState({ name: " "});
   }
 
@@ -31,7 +31,7 @@ class AddPlayer extends Component{
 }
 
 AddPlayer.propsTypes = {
-  add: PropTypes.func.isRequired,
+  addplayers: PropTypes.func.isRequired,
 }
 
 export default AddPlayer;

@@ -10,6 +10,7 @@ const App = () => {
     <HashRouter>
       <div className="App">
         <Navigation />
+        {/* <Content /> */}
         <Route exact path="/" component={ Content }/>
         <Route  path="/components/About" component={ About } />
         <Route path="/components/SourceCode" component={ Sourcecode } />
