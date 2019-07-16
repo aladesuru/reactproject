@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.92cda009.css",
-  "main.css.map": "static/css/main.92cda009.css.map",
-  "main.js": "static/js/main.01c92217.js",
-  "main.js.map": "static/js/main.01c92217.js.map"
+  "files": {
+    "main.css": "/scoreboard-app/static/css/main.48dd010a.chunk.css",
+    "main.js": "/scoreboard-app/static/js/main.6d9b214f.chunk.js",
+    "main.js.map": "/scoreboard-app/static/js/main.6d9b214f.chunk.js.map",
+    "runtime~main.js": "/scoreboard-app/static/js/runtime~main.8f965656.js",
+    "runtime~main.js.map": "/scoreboard-app/static/js/runtime~main.8f965656.js.map",
+    "static/js/2.4e7e4130.chunk.js": "/scoreboard-app/static/js/2.4e7e4130.chunk.js",
+    "static/js/2.4e7e4130.chunk.js.map": "/scoreboard-app/static/js/2.4e7e4130.chunk.js.map",
+    "index.html": "/scoreboard-app/index.html",
+    "precache-manifest.045d328dfcd7e9e27bec04d4c259025d.js": "/scoreboard-app/precache-manifest.045d328dfcd7e9e27bec04d4c259025d.js",
+    "service-worker.js": "/scoreboard-app/service-worker.js",
+    "static/css/main.48dd010a.chunk.css.map": "/scoreboard-app/static/css/main.48dd010a.chunk.css.map"
+  }
 }
